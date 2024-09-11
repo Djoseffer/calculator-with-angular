@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {CalculatorModule} from "./calculator";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -7,6 +8,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [CalculatorModule
+      ]
     }).compileComponents();
   });
 
@@ -14,18 +17,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'calc-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('calc-angular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('calc-angular app is running!');
   });
 });
